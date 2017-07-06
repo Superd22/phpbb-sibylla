@@ -1,0 +1,19 @@
+services:
+  scfr.sibylla.listener:
+    class: scfr\sibylla\event\listener
+    arguments:
+      - '@template'
+      - '@user'
+      - '@dbal.conn'
+    tags:
+      - { name: event.listener }
+
+  scfr.sibylla.topic:
+    class: scfr\sibylla\controller\Topic
+    arguments:
+      - '@dbal.conn'
+
+  scfr.sibylla.forum:
+    class: scfr\sibylla\controller\Forum
+    arguments:
+      - '@dbal.conn'
