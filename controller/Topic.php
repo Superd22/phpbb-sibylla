@@ -81,7 +81,6 @@ class Topic {
     preg_match_all("/\[JU_([a-zA-Z_]+) ([a-zA-Z0-9 #|?!$%]*)\]/",$message,$juIncV2);
     if(isset($juIncV2[0][0])) {
       $need_angular = true;
-      echo '<link rel="stylesheet" href="https://starcitizen.fr/Forum/styles/scfrV3/theme/juliet.css" type="text/css">';
       foreach($juIncV2[1] as $key=>$mode) {
         switch($mode) {
           case "TAGS":
